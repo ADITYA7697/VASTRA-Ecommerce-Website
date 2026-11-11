@@ -1,7 +1,7 @@
 /* VASTRA production-style frontend bridge: API-first with guest fallback. */
 (() => {
   "use strict";
-  const API_BASE = (localStorage.getItem("vastraApiBase") || "http://localhost:5000/api").replace(/\/$/, "");
+  const API_BASE = (["localhost", "127.0.0.1"].includes(window.location.hostname) ? (localStorage.getItem("vastraApiBase") || "http://localhost:5000/api") : `${window.location.origin}/api`).replace(/\/$/, "");
   const $ = (id) => document.getElementById(id);
   const safe = (v) => String(v ?? "").replace(/[&<>'"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[c]));
   const money = (v) => Number(v || 0).toLocaleString("en-IN", { maximumFractionDigits: 2 });
