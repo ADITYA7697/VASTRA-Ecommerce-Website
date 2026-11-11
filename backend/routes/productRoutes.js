@@ -1,0 +1,14 @@
+const r = require("express").Router();
+const c = require("../controllers/productController");
+const { protect, adminOnly } = require("../middleware/auth");
+const wrap = require("../utils/asyncHandler");
+r.get("/", wrap(c.list));
+r.get("/featured", wrap(c.featured));
+r.get("/:id/reviews", wrap(c.reviews));
+r.post("/:id/reviews", protect, wrap(c.addReview));
+r.get("/admin/all", protect, adminOnly, wrap(c.adminList));
+r.post("/admin/create", protect, adminOnly, wrap(c.create));
+r.put("/admin/:id", protect, adminOnly, wrap(c.update));
+r.delete("/admin/:id", protect, adminOnly, wrap(c.remove));
+r.get("/:id", wrap(c.getOne));
+module.exports = r;

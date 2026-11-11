@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Admin Panel | VASTRA</title><link rel="stylesheet" href="css/style.css?v=vastra-cartfix-20261101-v5">
+</head>
+<body>
+<header class="header"><a href="index.html" class="logo">VASTRA</a><nav class="nav"><a href="index.html">Store</a><a href="products.html">Shop</a><a href="admin.html" class="active">Admin Panel</a><a href="admin-login.html">Admin Login</a></nav></header>
+<main class="dashboard-page">
+<section class="dashboard-hero"><div><p class="small-title">VASTRA CONTROL CENTER</p><h1>Admin Panel</h1><p>Manage products securely. Admin actions require a backend administrator account.</p></div><button class="btn" onclick="adminLogout()">Admin Logout</button></section>
+<section class="stats-grid"><div class="stat-card"><span>Products</span><strong id="adminProductCount">0</strong></div><div class="stat-card"><span>User Data</span><strong id="adminUserCount">0</strong></div><div class="stat-card"><span>Cart Items</span><strong id="adminCartCount">0</strong></div><div class="stat-card"><span>Orders</span><strong id="adminOrderCount">0</strong></div><div class="stat-card"><span>Store Status</span><strong>Live</strong></div></section>
+<section class="admin-grid">
+<div class="panel-card"><div class="panel-heading"><div><p>CATALOG</p><h2>Product Management</h2></div></div>
+<form id="adminAddForm" class="admin-form" ><input id="adminProductName" placeholder="Product name" required><input id="adminProductPrice" type="number" min="1" max="999" placeholder="Price (₹, under 1000)" required><select id="adminProductCategory"><option value="clothing">Clothing</option><option value="shoes">Shoes</option><option value="bags">Bags</option><option value="eyewear">Eyewear</option><option value="accessories">Accessories</option></select><input id="adminProductStock" type="number" min="0" placeholder="Stock quantity" required><input id="adminProductDescription" placeholder="Short description (optional)"><input id="adminProductImage" placeholder="Image URL (https://… or assets/file.jpg)" required><button class="btn" type="submit">+ Add Product</button></form>
+<div id="adminProducts"></div></div>
+<div class="panel-card"><p>DISCOUNTS</p><h2>Coupon Management</h2><form id="adminCouponForm" class="admin-form"><input id="adminCouponCode" placeholder="Coupon code (e.g. VASTRA20)" required maxlength="40"><input id="adminCouponPercent" type="number" min="1" max="100" placeholder="Discount %" required><select id="adminCouponEligibility"><option value="first_order">First order only</option><option value="account_age_365">Account 365+ days old</option><option value="all">All customers</option></select><button class="btn" type="submit">Create Coupon</button></form><div id="adminCoupons"></div><p class="hint">Eligibility is checked on the server during checkout.</p></div>
+<div class="panel-card"><p>ADMIN ACCESS</p><h2>Create Administrator</h2><form id="adminCreateAdminForm" class="admin-form"><input id="newAdminName" placeholder="Full name" required><input id="newAdminEmail" type="email" placeholder="Email" required><input id="newAdminPassword" type="password" minlength="12" placeholder="Temporary password (12+ chars)" required><button class="btn" type="submit">Create Admin</button></form><p id="adminCreateAdminMessage" class="form-message" role="status"></p><p class="hint">Only authenticated admins can create another administrator. Share credentials securely.</p></div>
+<div class="panel-card"><p>ORDERS</p><h2>Return Requests</h2><div id="adminReturns"></div><p class="hint">Customers can request a return within 7 days of delivery. Refund online-paid orders from your Razorpay dashboard after approving.</p></div>
+<div class="panel-card"><p>USERS</p><h2>User Data</h2><div id="adminUsers"></div><p>Recent orders</p><div id="adminOrders"></div><p>Customer support</p><div id="adminTickets"></div><div class="quick-actions"><a class="btn secondary-btn" href="products.html">Open Store</a><button class="btn secondary-btn" onclick="adminLogout()">Logout Admin</button></div><p class="hint">Catalog changes are saved to MongoDB through the protected admin API.</p></div>
+</section></main>
+<script src="js/products.js?v=vastra-prices-20261102"></script><script src="js/script.js?v=vastra-cartfix-20261101-v5"></script>
+</body></html>

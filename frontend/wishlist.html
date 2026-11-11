@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Wishlist | VASTRA</title>
+<link rel="stylesheet" href="css/style.css?v=vastra-cartfix-20261101-v5">
+</head>
+<body>
+<header class="header">
+  <a href="index.html" class="logo">VASTRA</a>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="products.html">Shop</a>
+    <a href="account.html">Account</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Create Account</a>
+    <a href="wishlist.html" class="active">Wishlist <span class="wishlist-nav-badge" id="wishlistHeaderCount">0</span></a>
+    <a href="support.html">Support</a>
+    <a href="cart.html" class="cart-link"><span class="cart-icon" aria-hidden="true">♧</span> Cart <span id="cartCount">0</span></a>
+  </nav>
+</header>
+<main class="wishlist-page">
+  <div class="wishlist-heading">
+    <div><p class="eyebrow">SAVED FOR LATER</p><h1>My Wishlist</h1><p>Keep your favourite items saved in one place for easy shopping later.</p></div>
+    <div class="wishlist-heading-actions"><a class="btn secondary-btn" href="orders.html">My Orders</a><a class="btn secondary-btn" href="products.html">Continue Shopping →</a></div>
+  </div>
+  <div class="product-grid" id="wishlistGrid"></div>
+</main>
+<script src="js/products.js?v=vastra-prices-20261102"></script>
+<script src="js/script.js?v=vastra-cartfix-20261101-v5"></script>
+</body>
+</html>

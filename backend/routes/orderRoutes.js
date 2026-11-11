@@ -1,0 +1,12 @@
+const r = require("express").Router();
+const c = require("../controllers/orderController");
+const { protect, adminOnly } = require("../middleware/auth");
+const wrap = require("../utils/asyncHandler");
+r.post("/", protect, wrap(c.create));
+r.get("/my-orders", protect, wrap(c.mine));
+r.post("/:id/return", protect, wrap(c.requestReturn));
+r.get("/admin/all", protect, adminOnly, wrap(c.adminList));
+r.patch("/admin/:id/return", protect, adminOnly, wrap(c.reviewReturn));
+r.patch("/admin/:id/status", protect, adminOnly, wrap(c.updateStatus));
+r.get("/:id", protect, wrap(c.getOne));
+module.exports = r;

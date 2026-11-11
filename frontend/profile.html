@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Account | VASTRA</title><link rel="stylesheet" href="css/style.css?v=vastra-cartfix-20261101-v5">
+</head>
+<body>
+<header class="header">
+  <a href="index.html" class="logo">VASTRA</a>
+  <nav class="nav"><a href="index.html">Home</a><a href="products.html">Shop</a><a href="profile.html" class="active">Account</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Create Account</a><a href="support.html">Support</a><a href="cart.html" class="cart-link"><span class="cart-icon" aria-hidden="true">♧</span> Cart <span id="cartCount">0</span></a></nav>
+</header>
+
+<main class="account-page">
+  <section id="profileGuest" class="account-login-landing" style="display:none">
+    <div class="account-login-art"><div class="art-orb art-orb-one"></div><div class="art-orb art-orb-two"></div><p class="eyebrow">VASTRA ACCOUNT</p><h1>Everything you shop, saved in one space.</h1><p>Sign in to see your profile, favourite items, orders, cart and support shortcuts in one clean dashboard.</p><div class="art-points"><span>♡ Favourites & Wishlist</span><span>📦 Orders & delivery status</span><span>🛍️ Faster shopping access</span></div></div>
+    <div class="account-login-card"><div class="account-login-icon">◎</div><p class="eyebrow">CUSTOMER LOGIN</p><h2>Welcome to your VASTRA account</h2><p>Use your customer account to manage your details and shopping activity.</p><div class="account-login-actions"><a class="btn" href="login.html">Login to VASTRA</a><a class="btn secondary-btn" href="signup.html">Create Account</a></div><div class="account-mini-note">Your customer account is separate from the private admin area.</div></div>
+  </section>
+
+  <section id="profileContent" class="account-content up" style="display:none">
+    <div class="up-hero">
+      <div class="up-hero-user"><div class="up-avatar" id="accountHeroAvatar">U</div><div class="up-hero-text"><p class="up-eyebrow">MY VASTRA ACCOUNT</p><h1>Hi, <span id="profileHeaderName">Customer</span></h1><p class="up-email" id="profileHeaderEmail">—</p></div></div>
+      <div class="up-hero-actions"><a href="products.html" class="up-btn up-btn-light">Continue Shopping</a><button type="button" class="up-btn up-btn-ghost" onclick="logout()">Logout</button></div>
+    </div>
+
+    <div class="up-shell">
+      <aside class="up-side">
+        <div class="up-side-user"><div class="up-avatar sm" id="summaryAvatar">U</div><div class="up-side-text"><strong id="summaryName">Customer</strong><span id="summaryEmail">—</span></div><span class="up-chip">CUSTOMER</span></div>
+        <nav class="up-nav" aria-label="Account menu">
+          <a class="up-nav-link active" href="profile.html"><span>👤</span>My Profile</a>
+          <a class="up-nav-link" href="orders.html"><span>📦</span>My Orders <b id="profileOrdersCount">0</b></a>
+          <a class="up-nav-link" href="wishlist.html"><span class="heart-red">♥</span>Wishlist <b id="profileWishlistQuickCount">0</b></a>
+          <a class="up-nav-link" href="cart.html"><span>🛒</span>My Cart <b id="profileCartCount">0</b></a>
+          <a class="up-nav-link" href="products.html"><span>🛍️</span>Shop Products</a>
+          <a class="up-nav-link" href="support.html"><span>💬</span>Support</a>
+        </nav>
+      </aside>
+
+      <section class="up-main">
+        <div class="up-stats">
+          <div class="up-stat"><span class="up-stat-ico">📦</span><div><strong id="profileOrdersStat">0</strong><small>Orders placed</small></div></div>
+          <div class="up-stat"><span class="up-stat-ico">₹</span><div><strong id="profileOrdersValue">₹0</strong><small>Total order value</small></div></div>
+          <div class="up-stat"><span class="up-stat-ico heart-red">♥</span><div><strong id="profileWishlistCount">0</strong><small>Favourite items</small></div></div>
+          <div class="up-stat"><span class="up-stat-ico">🛒</span><div><strong id="profileCartValue">₹0</strong><small>Current cart value</small></div></div>
+        </div>
+
+        <div class="up-returns"><span class="up-returns-ico">↩</span><div><strong>7-Day Easy Returns</strong><small>Not happy with a delivered order? Request a return within 7 days of delivery from <a href="orders.html">My Orders</a>.</small></div></div>
+
+        <section class="up-card">
+          <div class="up-card-head"><div><p class="up-eyebrow">PERSONAL DETAILS</p><h2>Profile Information</h2></div><span class="up-chip ok">✓ Customer</span></div>
+          <form id="profileForm">
+            <div class="up-form-grid">
+              <label>Full Name<input id="profileName" type="text" required></label>
+              <label>Email Address<input id="profileEmail" type="email" disabled></label>
+              <label>Phone Number<input id="profilePhone" type="tel" inputmode="tel" placeholder="+91 mobile number"><span id="profilePhoneStatus" class="phone-status" aria-live="polite"></span></label>
+              <label>Date of Birth<input id="profileDob" type="date"></label>
+              <label>Gender<select id="profileGender"><option value="">Prefer not to say</option><option>Male</option><option>Female</option><option>Other</option></select></label>
+              <label>City<input id="profileCity" type="text" placeholder="Your city"></label>
+              <label class="wide">Address<input id="profileAddress" type="text" placeholder="House / Street / Area"></label>
+              <label>State<input id="profileState" type="text" placeholder="Your state"></label>
+              <label>PIN Code<input id="profilePincode" type="text" inputmode="numeric" maxlength="6" placeholder="6 digit PIN"></label>
+            </div>
+            <div id="phoneVerifyPanel" class="phone-login-panel" hidden>
+              <h3>Verify your mobile number</h3><p class="hint">Verified numbers let you log in with OTP.</p>
+              <div class="phone-row"><label class="cc-field">Country<select id="otpCountry"></select></label><label class="num-field">Mobile number<input type="tel" id="phoneLoginNumber" inputmode="tel" placeholder="98765 43210"></label></div>
+              <button type="button" class="btn" id="sendPhoneOtp">Send OTP</button>
+              <div id="otpVerifyGroup" hidden><label>OTP<input type="text" id="phoneLoginOtp" inputmode="numeric" autocomplete="one-time-code" maxlength="8"></label><button type="button" class="btn" id="verifyPhoneOtp">Verify</button> <button type="button" class="link-btn" id="resendOtp" disabled>Resend OTP</button></div>
+              <p id="alternateAuthMessage" class="form-message" role="status" aria-live="polite"></p>
+            </div>
+            <div class="up-form-actions"><button class="up-btn up-btn-dark" type="submit">Save Changes</button><a class="up-btn up-btn-outline" href="checkout.html">Go to Checkout</a><p id="profileMessage" class="form-message"></p></div>
+          </form>
+        </section>
+
+        <div class="up-two">
+          <section class="up-card">
+            <div class="up-card-head"><div><p class="up-eyebrow">FAVOURITES</p><h2>Saved for later</h2></div><a href="wishlist.html" class="up-link">View all →</a></div>
+            <div id="profileWishlistPreview" class="up-list"></div>
+          </section>
+          <section class="up-card">
+            <div class="up-card-head"><div><p class="up-eyebrow">SHOPPING ACTIVITY</p><h2>Recent orders</h2></div><a href="orders.html" class="up-link">View all →</a></div>
+            <div id="profileOrdersPreview" class="up-list"></div>
+          </section>
+        </div>
+      </section>
+    </div>
+  </section>
+</main>
+<script src="js/products.js?v=vastra-prices-20261102"></script><script src="js/script.js?v=vastra-cartfix-20261101-v5"></script><script src="js/auth-methods.js?v=20261101-2"></script>
+</body>
+</html>

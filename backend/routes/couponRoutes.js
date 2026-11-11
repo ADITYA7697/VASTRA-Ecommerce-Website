@@ -1,0 +1,2 @@
+const r=require('express').Router();const c=require('../controllers/couponController');const {protect,adminOnly}=require('../middleware/auth');const wrap=require('../utils/asyncHandler');
+r.post('/check',protect,wrap(c.check));r.get('/admin/all',protect,adminOnly,wrap(c.listAdmin));r.post('/admin',protect,adminOnly,wrap(c.create));r.patch('/admin/:id',protect,adminOnly,wrap(c.update));r.delete('/admin/:id',protect,adminOnly,wrap(c.remove));module.exports=r;

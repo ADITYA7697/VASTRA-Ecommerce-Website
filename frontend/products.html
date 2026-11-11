@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Shop | VASTRA</title>
+
+    <link rel="stylesheet"
+          href="css/style.css?v=vastra-cartfix-20261101-v5">
+
+</head>
+
+<body>
+
+<header class="header">
+
+    <a href="index.html"
+       class="logo">
+        VASTRA
+    </a>
+
+    <nav class="nav">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="products.html"
+           class="active">
+            Shop
+        </a>
+
+        <a href="profile.html">
+            Account
+        </a>
+
+        <a href="support.html">
+            Support
+        </a>
+
+        <a href="cart.html">
+            🛒 Cart
+            <span id="cartCount">0</span>
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main class="shop-page">
+
+    <div class="shop-header">
+
+        <div>
+
+            <p>
+                VASTRA STORE
+            </p>
+
+            <h1>
+                Clothing & Lifestyle
+            </h1>
+
+        </div>
+
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search T-shirts, hoodies, jeans, bags..."
+        >
+
+    </div>
+
+
+    <div class="filter-bar">
+
+        <button
+            class="filter-btn active"
+            data-category="all">
+            All
+        </button>
+
+        <button class="filter-btn" data-category="clothing">Clothing</button>
+
+        <button class="filter-btn" data-category="bags">Bags</button>
+
+        <button
+            class="filter-btn"
+            data-category="shoes">
+            Shoes
+        </button>
+
+        <button class="filter-btn" data-category="eyewear">Eyewear</button><button class="filter-btn" data-category="accessories">Accessories</button>
+
+    </div>
+
+
+    <div
+        class="product-grid"
+        id="productGrid">
+    </div>
+
+</main>
+
+
+<script src="js/products.js?v=vastra-prices-20261102"></script>
+<script src="js/script.js?v=vastra-cartfix-20261101-v5"></script>
+</body>
+</html>

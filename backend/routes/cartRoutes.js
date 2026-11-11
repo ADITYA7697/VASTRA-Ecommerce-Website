@@ -1,0 +1,11 @@
+const r = require("express").Router();
+const c = require("../controllers/cartController");
+const { protect } = require("../middleware/auth");
+const wrap = require("../utils/asyncHandler");
+r.use(protect);
+r.get("/", wrap(c.get));
+r.post("/items", wrap(c.add));
+r.patch("/items/:itemId", wrap(c.update));
+r.delete("/items/:itemId", wrap(c.remove));
+r.delete("/", wrap(c.clear));
+module.exports = r;

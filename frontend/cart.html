@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Cart | VASTRA</title>
+
+    <link rel="stylesheet"
+          href="css/style.css?v=vastra-cartfix-20261101-v5">
+
+</head>
+
+<body>
+
+<header class="header">
+
+    <a href="index.html"
+       class="logo">
+        VASTRA
+    </a>
+
+    <nav class="nav">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="products.html">
+            Shop
+        </a>
+
+        <a href="profile.html">
+            Account
+        </a>
+
+        <a href="support.html">
+            Support
+        </a>
+        <a href="cart.html" class="cart-link" aria-label="Shopping cart"><span class="cart-icon" aria-hidden="true">♧</span> Cart <span id="cartCount">0</span></a>
+
+    </nav>
+
+</header>
+
+
+<main class="cart-page">
+
+    <div class="section-heading">
+
+        <p>
+            YOUR SHOPPING BAG
+        </p>
+
+        <h1>
+            Shopping Cart
+        </h1>
+
+    </div>
+
+
+    <div class="cart-layout">
+
+        <div
+            id="cartItems"
+            class="cart-items">
+        </div>
+
+
+        <aside class="cart-summary">
+
+            <h2>
+                Order Summary
+            </h2>
+
+            <div class="summary-row">
+
+                <span>
+                    Subtotal
+                </span>
+
+                <strong>
+                    ₹<span id="subtotal">0</span>
+                </strong>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Delivery
+                </span>
+
+                <strong>
+                    Free
+                </strong>
+
+            </div>
+
+
+            <hr>
+
+
+            <div class="summary-row total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong>
+                    ₹<span id="total">0</span>
+                </strong>
+
+            </div>
+
+
+            <button
+                class="btn checkout-btn"
+                onclick="checkout()">
+
+                Proceed to Checkout
+
+            </button>
+
+
+            <button
+                class="clear-btn"
+                onclick="clearCart()">
+
+                Clear Cart
+
+            </button>
+
+        </aside>
+
+    </div>
+
+</main>
+
+
+<script src="js/products.js?v=vastra-prices-20261102"></script>
+<script src="js/script.js?v=vastra-cartfix-20261101-v5"></script>
+</body>
+</html>
